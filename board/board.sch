@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -12121,6 +12121,7 @@ Source: www.kingbright.com</description>
 <part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="0207/10" value="47"/>
+<part name="P+5" library="supply1" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12160,6 +12161,7 @@ Source: www.kingbright.com</description>
 <instance part="LED1" gate="G$1" x="78.74" y="144.78"/>
 <instance part="GND8" gate="1" x="78.74" y="134.62"/>
 <instance part="R4" gate="G$1" x="78.74" y="154.94" rot="R90"/>
+<instance part="P+5" gate="VCC" x="35.56" y="109.22"/>
 </instances>
 <busses>
 </busses>
@@ -12258,6 +12260,11 @@ Source: www.kingbright.com</description>
 <wire x1="114.3" y1="30.48" x2="114.3" y2="25.4" width="0.1524" layer="91"/>
 <junction x="114.3" y="30.48"/>
 </segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="35.56" y1="101.6" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="P+5" gate="VCC" pin="VCC"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -12326,17 +12333,6 @@ Source: www.kingbright.com</description>
 <junction x="86.36" y="30.48"/>
 </segment>
 <segment>
-<pinref part="DHT11" gate="A" pin="4"/>
-<wire x1="20.32" y1="91.44" x2="30.48" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="91.44" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
-<label x="30.48" y="109.22" size="1.778" layer="95" rot="R90" xref="yes"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="30.48" y1="104.14" x2="30.48" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="101.6" x2="35.56" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="104.14" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
-<junction x="30.48" y="104.14"/>
-</segment>
-<segment>
 <pinref part="RELAY" gate="A" pin="2"/>
 <wire x1="20.32" y1="152.4" x2="43.18" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="152.4" x2="43.18" y2="162.56" width="0.1524" layer="91"/>
@@ -12352,6 +12348,12 @@ Source: www.kingbright.com</description>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="78.74" y1="160.02" x2="78.74" y2="162.56" width="0.1524" layer="91"/>
 <label x="78.74" y="162.56" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="DHT11" gate="A" pin="4"/>
+<wire x1="20.32" y1="91.44" x2="30.48" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="91.44" x2="30.48" y2="106.68" width="0.1524" layer="91"/>
+<label x="30.48" y="106.68" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="DHT" class="0">
